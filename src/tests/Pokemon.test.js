@@ -5,10 +5,6 @@ import renderWithRouter from '../helpers/renderWithRouter';
 import App from '../App';
 
 describe('Teste o componente <Pokemon.js />', () => {
-  /*
-   por ter que utilizar o history nas linhas 45 e 58, tive que utilizar renderWithRouter(<App />) em cada teste
-  */
-
   const POKEMON__PIKACHU = '/pokemons/25';
 
   it('É renderizado um card com as informações de determinado pokémon', () => {
@@ -16,10 +12,6 @@ describe('Teste o componente <Pokemon.js />', () => {
 
     expect(screen.getByText(/pikachu/i)).toBeInTheDocument();
     expect(screen.getByTestId(/pokemon-name/i)).toHaveTextContent(/pikachu/i);
-
-    /*
-      percebi que a maneira /pokemon-type/i /Electric/i estava capturando os botões e por isso não passando nos testes, mudei a forma de identificar os textos para 'pokemon-type' 'Electric' e passou!
-    */
 
     const pokemonType = screen.getByTestId('pokemon-type');
     expect(pokemonType).toHaveTextContent('Electric');
@@ -50,7 +42,6 @@ describe('Teste o componente <Pokemon.js />', () => {
     const moreDetails = screen.getByRole('link', { name: /more details/i });
     userEvent.click(moreDetails);
 
-    // utilizei o test App como exemplo para este test
     const {
       location: { pathname },
     } = history;

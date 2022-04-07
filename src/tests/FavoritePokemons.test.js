@@ -14,7 +14,6 @@ describe('Teste o componente <FavoritePokemons.js />', () => {
     expect(msgNotFound).toBeInTheDocument();
   });
 
-  // Fiz este requisito com a dica do Moisés na mentoria
   it('Teste se é exibido todos os cards de pokémons favoritados.', () => {
     const arrayPokemons = [
       {

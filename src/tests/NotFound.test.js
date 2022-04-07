@@ -3,8 +3,6 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from '../helpers/renderWithRouter';
 import App from '../App';
 
-// realizei este requisito acompanhando a mentoria de revisão do Rod (summer)
-
 describe('Teste o componente <NotFound.js />', () => {
   beforeEach(() => {
     const { history } = renderWithRouter(<App />);

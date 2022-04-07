@@ -8,10 +8,6 @@ describe('Teste o componente <PokemonDetails.js />', () => {
   const altImg = 'Pikachu location';
   const POKEMON__PIKACHU = '/pokemons/25';
 
-  /*
-    Para sempre renderizar no caminho '/pokemons/25', utilizei o history.push(POKEMON__PIKACHU) em cada teste
-  */
-
   it('As informações detalhadas do Pokémon selecionado são mostradas na tela', () => {
     const { history } = renderWithRouter(<App />);
 
@@ -44,10 +40,6 @@ describe('Teste o componente <PokemonDetails.js />', () => {
 
     const pokemonLocation = screen.getAllByAltText(altImg);
     expect(pokemonLocation).toHaveLength(2);
-    /*
-      percebi que utilizando o getByRole('img') retornava todas as imagens da páginas, não só as de localização;
-      como pokemonLocation retorna um array, pensei em utilizar os indexs para ser mais preciso.
-    */
 
     expect(pokemonLocation[0]).toHaveAttribute(
       'src',

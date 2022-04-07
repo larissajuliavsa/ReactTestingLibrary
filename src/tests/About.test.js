@@ -3,10 +3,7 @@ import { screen } from '@testing-library/react';
 import renderWithRouter from '../helpers/renderWithRouter';
 import About from '../components/About';
 
-// realizei este requisito acompanhando a mentoria de revisão do Rod (summer)
-
 describe('Teste o componente <About.js />', () => {
-  // para cada teste it('', () => {}) renderizar o componente <About /> antes dos testes.
   beforeEach(() => {
     renderWithRouter(<About />);
   });
@@ -23,7 +20,6 @@ describe('Teste o componente <About.js />', () => {
     const paragraph = screen.getAllByText(/Pokémons/i);
     expect(paragraph).toHaveLength(2);
 
-    // por toHaveLength() ser um array, devo fazer o teste utilizando forEach.
     paragraph.forEach((para) => {
       expect(para).toBeInTheDocument();
     });
